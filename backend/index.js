@@ -3,10 +3,10 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 5000;
 import path from "path";
-
+import dotenv from "dotenv";
 import additem from "./routes/additem.js";
 import getitems from "./routes/getItems.js";
-
+dotenv.config();
 import mongoDbConnect from "./DB.js";
 import cors from "cors";
 

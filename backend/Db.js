@@ -1,3 +1,5 @@
+/*  eslint-env node  */
+
 import mongoose from "mongoose";
 
 const url =
@@ -5,10 +7,13 @@ const url =
 
 const mongoDbConnect = async () => {
   try {
-    await mongoose.connect(url);
-    console.log("connected to  monodb ");
+    await mongoose.connect(url, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log(" Connected to MongoDB");
   } catch (err) {
-    console.log("error connecting to mongoose " + err);
+    console.log(" Error connecting to MongoDB:", err.message);
   }
 };
 
