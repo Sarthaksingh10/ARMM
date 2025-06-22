@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function ItemCard({ item, onClick }) {
+  //all photos is an array with current item photo and will use spread operator if additional photos being uploaded
   const allPhotos = [item.photo, ...(item.additionalPhotos || [])];
   const [selectedPhoto, setSelectedPhoto] = useState(item.photo);
 

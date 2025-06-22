@@ -3,6 +3,7 @@ import express from "express";
 
 const router = express.Router();
 
+//getItems to get all the items in the database and display them
 router.get("/getitems", async (req, res) => {
   try {
     const products = await Product.find({});

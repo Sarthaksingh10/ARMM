@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import Button from "./Button";
-
+//Navbar and internship details for the home menu
 export default function Home() {
   const navigate = useNavigate();
   const handleAddButtonClick = () => {

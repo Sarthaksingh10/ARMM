@@ -18,12 +18,13 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage });
+//handling multiple uploads using multer
 const multiUpload = upload.fields([
   { name: "photo", maxCount: 1 },
   { name: "additionalPhotos", maxCount: 5 },
 ]);
 const router = express.Router();
-
+/* Route to handle creatiion of new items */
 router.post("/additem", multiUpload, async (req, res) => {
   const { itemName, itemType, itemDesc } = req.body;
 

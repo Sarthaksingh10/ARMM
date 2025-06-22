@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import toast from "react-hot-toast";
 
+//Handling form using react hook form which internally validates form fields
+//no require of extra js function to handle form
 export default function AddItemForm() {
   const {
     register,
@@ -20,6 +22,7 @@ export default function AddItemForm() {
       formData.append("additionalPhotos", data.additionalPhotos[i]);
     }
     try {
+      //adding respone in database on submit
       const response = await fetch("http://localhost:5000/api/additem", {
         method: "POST",
         body: formData,
@@ -148,6 +151,8 @@ export default function AddItemForm() {
           <div id="images-preview" className="flex flex-wrap gap-2 mt-2"></div>
           <p className="text-red-500 text-sm mt-1">{errors.photo?.message}</p>
         </div>
+
+        {/* Additional Images */}
         <div>
           <label
             className="block text-sm font-medium mb-1 text-gray-700"

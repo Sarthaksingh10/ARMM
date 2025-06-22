@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const startServer = async () => {
   await mongoDbConnect();
+
   app.use("/uploads", express.static(path.resolve("./Uploads")));
   app.use("/api", additem);
   app.use("/api", getitems);

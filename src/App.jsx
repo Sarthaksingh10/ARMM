@@ -3,6 +3,8 @@ import Home from "./Components/Home";
 function App() {
   return (
     <>
+      {/* Toaster handling alert like message using react-hot-toast
+       */}
       <Toaster />
       <Home />
     </>
